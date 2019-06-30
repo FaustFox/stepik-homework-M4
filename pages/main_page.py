@@ -1,12 +1,9 @@
-from selenium.webdriver.common.by import By
-
 from .base_page import BasePage
 from .locators import MainPageLocators
 
 
 class MainPage(BasePage):
 
-    #link = "http://selenium1py.pythonanywhere.com/"
     link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209?promo=midsummer" 
 
     def go_to_login_page(self):
