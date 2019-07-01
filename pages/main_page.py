@@ -4,7 +4,7 @@ from .locators import MainPageLocators
 
 class MainPage(BasePage):
 
-    link = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209?promo=midsummer" 
+    link = "http://selenium1py.pythonanywhere.com" 
 
     def go_to_login_page(self):
         login_link = self.browser.find_element(*MainPageLocators.LOGIN_LINK)
