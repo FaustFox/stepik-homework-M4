@@ -13,3 +13,17 @@ class LoginPageLocators:
     REG_FORM_NAME_INPUT = (By.CSS_SELECTOR, "#id_registration-email")
     REG_FORM_PASS1_INPUT = (By.CSS_SELECTOR, "#id_registration-password1")
     REG_FORM_PASS2_INPUT = (By.CSS_SELECTOR, "#id_registration-password2")
+
+
+class ProductPageLocators:
+    BUTTON_ADD_TO_BASKET = (By.CSS_SELECTOR, ".btn-add-to-basket")
+    PRODUCT_NAME = (By.CSS_SELECTOR, ".product_main h1")
+    PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main .price_color")
+    ADDED_TO_BASKET_PRODUCT_NAME = (
+        By.CSS_SELECTOR, 
+        ".alert:nth-child(1) .alertinner strong"
+        )
+    ADDED_TO_BASKET_PRODUCT_PRICE = (
+        By.CSS_SELECTOR, 
+        ".alert:nth-child(3) .alertinner strong"
+        )
