@@ -12,10 +12,6 @@ class ProductPage(BasePage):
             )
         button.click()
         self.solve_quiz_and_get_code()
-        self.should_be_success_message()
-        self.product_name_match_basket_product_name()
-        self.product_price_match_basket_product_price()
-        self.should_disappear_success_message()
     
     def product_name_match_basket_product_name(self):
         product_name = self.browser.find_element(

@@ -1,9 +1,10 @@
 from selenium.webdriver.common.by import By 
 
 
-class MainPageLocators:
+class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-
+    LOGIN_LINK_BAD = (By.CSS_SELECTOR, "#login_link_bad")
+    
 
 class LoginPageLocators:
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
@@ -13,6 +14,10 @@ class LoginPageLocators:
     REG_FORM_NAME_INPUT = (By.CSS_SELECTOR, "#id_registration-email")
     REG_FORM_PASS1_INPUT = (By.CSS_SELECTOR, "#id_registration-password1")
     REG_FORM_PASS2_INPUT = (By.CSS_SELECTOR, "#id_registration-password2")
+
+# don't needed anymore
+#class MainPageLocators:
+#    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
 
 
 class ProductPageLocators:
