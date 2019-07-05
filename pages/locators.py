@@ -24,10 +24,6 @@ class LoginPageLocators:
     REG_FORM_PASS2_INPUT = (By.CSS_SELECTOR, "#id_registration-password2")
     REG_FORM_BUTTON = (By.NAME, "registration_submit")
 
-# don't needed anymore
-#class MainPageLocators:
-#    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
-
 
 class ProductPageLocators:
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages .alert-success")

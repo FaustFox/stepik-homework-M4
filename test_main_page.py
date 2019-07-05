@@ -46,7 +46,7 @@ def test_should_be_register_form_direct_link(browser):
     page.open()
     page.should_be_register_form()
 
-def test_should_see_login_link(browser):
+def test_guest_should_see_login_link(browser):
     link = "http://selenium1py.pythonanywhere.com"
     page = MainPage(browser, link)
     page.open()

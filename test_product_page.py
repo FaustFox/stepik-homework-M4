@@ -20,13 +20,18 @@ class TestUserAddToCartFromProductPage:
         page.open()
         page.should_not_be_success_message()
 
-    def test_user_could_add_product_with_button_add_to_basket(self, browser):
+    @pytest.mark.need_review
+    def test_user_can_add_product_to_cart(self, browser):
         page = ProductPage(browser, ProductPage.link)
         page.open()
         page.click_button_add_to_basket()
+        page.should_be_success_message()
+        page.product_name_match_basket_product_name()
+        page.product_price_match_basket_product_price()
 
+@pytest.mark.need_review
 def test_guest_can_go_login_page_from_product_page(browser):
-    link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
+    link = "http://selenium1py.pythonanywhere.com/catalogue/the-city-and-the-stars_95/"
     page = ProductPage(browser, link)
     page.open()
     page.go_to_login_page()
@@ -40,8 +45,9 @@ def test_guest_cant_see_empty_message_in_basket_from_product_page(browser):
     basket_page.basket_should_have_product()
     basket_page.basket_with_product_should_not_have_message_of_emptyness()
 
-def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
-    link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
+@pytest.mark.need_review
+def test_guest_cant_see_product_in_cart_opened_from_product_page(browser):
+    link = "http://selenium1py.pythonanywhere.com/catalogue/the-city-and-the-stars_95/"
     page = BasketPage(browser, link)
     page.open()
     page.go_to_basket_page()
@@ -53,10 +59,14 @@ def test_guest_cant_see_success_message(browser):
     page.open()
     page.should_not_be_success_message()
 
-def test_guest_could_add_product_with_button_add_to_basket(browser):
+@pytest.mark.need_review
+def test_guest_can_add_product_to_cart(browser):
     page = ProductPage(browser, ProductPage.link)
     page.open()
     page.click_button_add_to_basket()
+    page.should_be_success_message()
+    page.product_name_match_basket_product_name()
+    page.product_price_match_basket_product_price()
 
 def test_guest_should_see_button_add_to_basket(browser):
     page = ProductPage(browser, ProductPage.link)
@@ -64,7 +74,7 @@ def test_guest_should_see_button_add_to_basket(browser):
     page.should_be_button_add_to_basket()
 
 def test_guest_should_see_login_link_on_product_page(browser):
-    link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
+    link = "http://selenium1py.pythonanywhere.com/catalogue/the-city-and-the-stars_95/"
     page = ProductPage(browser, link)
     page.open()
     page.should_be_login_link()
